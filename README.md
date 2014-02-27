@@ -8,14 +8,14 @@ Prerequisites
 
 You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedora 20 that means doing:
 
-sudo yum install texlive-latex-bin
-sudo yum install texlive-dvipng-bin
-sudo yum install texlive-dvisvgm-bin
-sudo yum install texlive-texconfig-bin
-sudo yum install texlive-metafont-bin
-sudo yum install 'tex(cmr10.tfm)'
-sudo yum install 'tex(colordvi.sty)'
-sudo yum install 'tex(epic.sty)'
+-sudo yum install texlive-latex-bin
+-sudo yum install texlive-dvipng-bin
+-sudo yum install texlive-dvisvgm-bin
+-sudo yum install texlive-texconfig-bin
+-sudo yum install texlive-metafont-bin
+-sudo yum install 'tex(cmr10.tfm)'
+-sudo yum install 'tex(colordvi.sty)'
+-sudo yum install 'tex(epic.sty)'
 
 Installation
 ============
