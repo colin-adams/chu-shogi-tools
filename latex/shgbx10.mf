@@ -1,0 +1,27 @@
+% Shogi font for modern sho, chu and tenjiku
+% E.Werner, March 2000
+%
+font_identifier "Shogi";
+font_size=10pt#;
+font_coding_scheme:="Shogi full";
+
+mode_setup;
+em#:=7pt#; cap#:=12pt#;
+thin#:=.5pt#; thick#:=1.4pt#;
+med#:=.9pt#; hair#:=4/12pt#;
+medserif#:=8/10pt#;
+thickserif#:=1.05pt#;
+xhook#:=1.5pt#;
+yhook#:=0.5pt#;
+serif_height#:=2/3pt#;
+serif_length#:=2/3pt#;
+hook_height#:=1pt#;
+
+
+font_normal_space 6pt#;
+font_normal_stretch 3pt#;
+font_normal_shrink 1pt#;
+
+input shogi_koma;
+end.
+

@@ -1,0 +1,566 @@
+% E.Werner, April 2000
+\usepackage{epic}
+\usepackage[latin1]{inputenc}
+\newif\ifsho\shotrue
+\newif\ifchu\chufalse
+\newif\iftenjiku\tenjikufalse
+\newfont\normalshogifont{shg10 scaled 1000}
+\newfont\bfshogifont{shgb10 scaled 1000}
+\newfont\emshogifont{shgbx10 scaled 1000}
+\newcommand\rmshogi{\let\shogi\normalshogifont}
+\newcommand\bfshogi{\let\shogi\emshogifont}
+\rmshogi
+\newcommand\Fu{{\shogi\char0}}
+\newcommand\FU{{\shogi\char1}}
+\newcommand\nFu{{\shogi\char2}}
+\newcommand\nFU{{\shogi\char3}}
+\newcommand\To{{\shogi\char4}}
+\newcommand\TO{{\shogi\char5}}
+\newcommand\Hei{{\shogi\char8}}
+\newcommand\HEI{{\shogi\char9}}
+\newcommand\nHei{{\shogi\char10}}
+\newcommand\nHEI{{\shogi\char11}}
+\newcommand\Han{{\shogi\char12}}
+\newcommand\HAN{{\shogi\char13}}
+\newcommand\nHan{{\shogi\char14}}
+\newcommand\nHAN{{\shogi\char15}}
+\newcommand\Sha{{\shogi\char16}}
+\newcommand\SHA{{\shogi\char17}}
+\newcommand\nSha{{\shogi\char18}}
+\newcommand\nSHA{{\shogi\char19}}
+\newcommand\Tai{{\shogi\char20}}
+\newcommand\TAI{{\shogi\char21}}
+\newcommand\nTai{{\shogi\char22}}
+\newcommand\nTAI{{\shogi\char23}}
+\newcommand\Inu{{\shogi\char24}}
+\newcommand\INU{{\shogi\char25}}
+\newcommand\Sho{{\shogi\char28}}
+\newcommand\SHO{{\shogi\char29}}
+\newcommand\nSho{{\shogi\char30}}
+\newcommand\nSHO{{\shogi\char31}}
+\newcommand\Gyo{{\shogi\char32}}
+\newcommand\GYO{{\shogi\char33}}
+\newcommand\nGyo{{\shogi\char34}}
+\newcommand\nGYO{{\shogi\char35}}
+\newcommand\Kaku{{\shogi\char36}}
+\newcommand\KAKU{{\shogi\char37}}
+\newcommand\nKaku{{\shogi\char38}}
+\newcommand\nKAKU{{\shogi\char39}}
+\newcommand\Kin{{\shogi\char40}}
+\newcommand\KIN{{\shogi\char41}}
+\newcommand\nKin{{\shogi\char42}}
+\newcommand\nKIN{{\shogi\char43}}
+\newcommand\Gin{{\shogi\char44}}
+\newcommand\GIN{{\shogi\char45}}
+\newcommand\nGin{{\shogi\char46}}
+\newcommand\nGIN{{\shogi\char47}}
+\newcommand\Do{{\shogi\char48}}
+\newcommand\DO{{\shogi\char49}}
+\newcommand\nDo{{\shogi\char50}}
+\newcommand\nDO{{\shogi\char51}}
+\newcommand\Tesu{{\shogi\char52}}
+\newcommand\TESU{{\shogi\char53}}
+\newcommand\nTesu{{\shogi\char54}}
+\newcommand\nTESU{{\shogi\char55}}
+\newcommand\Ma{{\shogi\char56}}
+\newcommand\MA{{\shogi\char57}}
+\newcommand\nMa{{\shogi\char58}}
+\newcommand\nMA{{\shogi\char59}}
+\newcommand\Oo{{\shogi\char60}}
+\newcommand\OO{{\shogi\char61}}
+\newcommand\nOo{{\shogi\char62}}
+\newcommand\nOO{{\shogi\char63}}
+\newcommand\Gyoku{{\shogi\char64}}
+\newcommand\GYOKU{{\shogi\char65}}
+\newcommand\nGyoku{{\shogi\char66}}
+\newcommand\nGYOKU{{\shogi\char67}}
+\newcommand\Hon{{\shogi\char68}}
+\newcommand\HON{{\shogi\char69}}
+\newcommand\nHon{{\shogi\char70}}
+\newcommand\nHON{{\shogi\char71}}
+\newcommand\Shii{{\shogi\char72}}
+\newcommand\SHII{{\shogi\char73}}
+\newcommand\nShii{{\shogi\char74}}
+\newcommand\nSHII{{\shogi\char75}}
+\newcommand\Gyu{{\shogi\char76}}
+\newcommand\GYU{{\shogi\char77}}
+\newcommand\nGyu{{\shogi\char78}}
+\newcommand\nGYU{{\shogi\char79}}
+\newcommand\Kyo{{\shogi\char80}}
+\newcommand\KYO{{\shogi\char81}}
+\newcommand\nKyo{{\shogi\char82}}
+\newcommand\nKYO{{\shogi\char83}}
+\newcommand\Kei{{\shogi\char84}}
+\newcommand\KEI{{\shogi\char85}}
+\newcommand\nKei{{\shogi\char86}}
+\newcommand\nKEI{{\shogi\char87}}
+\newcommand\Hi{{\shogi\char88}}
+\newcommand\HI{{\shogi\char89}}
+\newcommand\nHi{{\shogi\char90}}
+\newcommand\nHI{{\shogi\char91}}
+\newcommand\Nari{{\shogi\char92}}
+\newcommand\NARI{{\shogi\char93}}
+\newcommand\nari{{\shogi\char94}}
+\newcommand\nARI{{\shogi\char95}}
+\newcommand\Ryu{{\shogi\char96}}
+\newcommand\RYU{{\shogi\char97}}
+\newcommand\nRyu{{\shogi\char98}}
+\newcommand\nRYU{{\shogi\char99}}
+\newcommand\Ko{{\shogi\char100}}
+\newcommand\KO{{\shogi\char101}}
+\newcommand\nKo{{\shogi\char102}}
+\newcommand\nKO{{\shogi\char103}}
+\newcommand\Taii{{\shogi\char104}}
+\newcommand\TAII{{\shogi\char105}}
+\newcommand\nTaii{{\shogi\char106}}
+\newcommand\nTAII{{\shogi\char107}}
+\newcommand\Ken{{\shogi\char108}}
+\newcommand\KEN{{\shogi\char109}}
+\newcommand\nKen{{\shogi\char110}}
+\newcommand\nKEN{{\shogi\char111}}
+\newcommand\Fuku{{\shogi\char112}}
+\newcommand\FUKU{{\shogi\char113}}
+\newcommand\nFuku{{\shogi\char114}}
+\newcommand\nFUKU{{\shogi\char115}}
+\newcommand\Nin{{\shogi\char116}}
+\newcommand\NIN{{\shogi\char117}}
+\newcommand\nNin{{\shogi\char118}}
+\newcommand\nNIN{{\shogi\char119}}
+\newcommand\Chu{{\shogi\char120}}
+\newcommand\CHU{{\shogi\char121}}
+\newcommand\nChu{{\shogi\char122}}
+\newcommand\nCHU{{\shogi\char123}}
+\newcommand\Shi{{\shogi\char124}}
+\newcommand\SHI{{\shogi\char125}}
+\newcommand\nShi{{\shogi\char126}}
+\newcommand\nSHI{{\shogi\char127}}
+\newcommand\Mo{{\shogi\char128}}
+\newcommand\MO{{\shogi\char129}}
+\newcommand\nMo{{\shogi\char130}}
+\newcommand\nMO{{\shogi\char131}}
+\newcommand\Hyo{{\shogi\char132}}
+\newcommand\HYO{{\shogi\char133}}
+\newcommand\nHyo{{\shogi\char134}}
+\newcommand\nHYO{{\shogi\char135}}
+\newcommand\Kuo{{\shogi\char136}}
+\newcommand\KUO{{\shogi\char137}}
+\newcommand\nKuo{{\shogi\char138}}
+\newcommand\nKUO{{\shogi\char139}}
+\newcommand\Ku{{\shogi\char140}}
+\newcommand\KU{{\shogi\char141}}
+\newcommand\nKu{{\shogi\char142}}
+\newcommand\nKU{{\shogi\char143}}
+\newcommand\Haku{{\shogi\char144}}
+\newcommand\HAKU{{\shogi\char145}}
+\newcommand\nHaku{{\shogi\char146}}
+\newcommand\nHAKU{{\shogi\char147}}
+\newcommand\Ju{{\shogi\char148}}
+\newcommand\JU{{\shogi\char149}}
+\newcommand\nJu{{\shogi\char150}}
+\newcommand\nJU{{\shogi\char151}}
+\newcommand\Cho{{\shogi\char152}}
+\newcommand\CHO{{\shogi\char153}}
+\newcommand\nCho{{\shogi\char154}}
+\newcommand\nCHO{{\shogi\char155}}
+\newcommand\Suii{{\shogi\char156}}
+\newcommand\SUII{{\shogi\char157}}
+\newcommand\nSuii{{\shogi\char158}}
+\newcommand\nSUII{{\shogi\char159}}
+\newcommand\Ho{{\shogi\char160}}
+\newcommand\HO{{\shogi\char161}}
+\newcommand\nHo{{\shogi\char162}}
+\newcommand\nHO{{\shogi\char163}}
+\newcommand\Ten{{\shogi\char164}}
+\newcommand\TEN{{\shogi\char165}}
+\newcommand\nTen{{\shogi\char166}}
+\newcommand\nTEN{{\shogi\char167}}
+\newcommand\Shiii{{\shogi\char168}}
+\newcommand\SHIII{{\shogi\char169}}
+\newcommand\nShiii{{\shogi\char170}}
+\newcommand\nSHIII{{\shogi\char171}}
+\newcommand\Ooii{{\shogi\char172}}
+\newcommand\OOII{{\shogi\char173}}
+\newcommand\nOoii{{\shogi\char174}}
+\newcommand\nOOII{{\shogi\char175}}
+\newcommand\Ka{{\shogi\char176}}
+\newcommand\KA{{\shogi\char177}}
+\newcommand\nKa{{\shogi\char178}}
+\newcommand\nKA{{\shogi\char179}}
+\newcommand\Zo{{\shogi\char180}}
+\newcommand\ZO{{\shogi\char181}}
+\newcommand\nZo{{\shogi\char182}}
+\newcommand\nZO{{\shogi\char183}}
+\newcommand\Suiii{{\shogi\char184}}
+\newcommand\SUIII{{\shogi\char185}}
+\newcommand\nSuiii{{\shogi\char186}}
+\newcommand\nSUIII{{\shogi\char187}}
+\newcommand\Roku{{\shogi\char188}}
+\newcommand\ROKU{{\shogi\char189}}
+\newcommand\nRoku{{\shogi\char190}}
+\newcommand\nROKU{{\shogi\char191}}
+\newcommand\Ki{{\shogi\char192}}
+\newcommand\KI{{\shogi\char193}}
+\newcommand\nKi{{\shogi\char194}}
+\newcommand\nKI{{\shogi\char195}}
+\newcommand\Rin{{\shogi\char196}}
+\newcommand\RIN{{\shogi\char197}}
+\newcommand\nRin{{\shogi\char198}}
+\newcommand\nRIN{{\shogi\char199}}
+\newcommand\Sui{{\shogi\char200}}
+\newcommand\SUI{{\shogi\char201}}
+\newcommand\nSui{{\shogi\char202}}
+\newcommand\nSUI{{\shogi\char203}}
+\newcommand\Moii{{\shogi\char204}}
+\newcommand\MOII{{\shogi\char205}}
+\newcommand\nMoii{{\shogi\char206}}
+\newcommand\nMOII{{\shogi\char207}}
+\newcommand\Koii{{\shogi\char208}}
+\newcommand\KOII{{\shogi\char209}}
+\newcommand\nKoii{{\shogi\char210}}
+\newcommand\nKOII{{\shogi\char211}}
+\newcommand\Kii{{\shogi\char212}}
+\newcommand\KII{{\shogi\char213}}
+\newcommand\nKii{{\shogi\char214}}
+\newcommand\nKII{{\shogi\char215}}
+\newcommand\Keii{{\shogi\char216}}
+\newcommand\KEII{{\shogi\char217}}
+\newcommand\nKeii{{\shogi\char218}}
+\newcommand\nKEII{{\shogi\char219}}
+\newcommand\Gei{{\shogi\char220}}
+\newcommand\GEI{{\shogi\char221}}
+\newcommand\nGei{{\shogi\char222}}
+\newcommand\nGEI{{\shogi\char223}}
+%%
+\newcommand\Shahei{\shortstack{\nSha\\[-2pt]\nHei}}
+\newcommand\SHAHEI{\shortstack{\nHEI\\[-2pt]\nSHA}}
+\newcommand\Keigei{\shortstack{\nKeii\\[-2pt]\nGei}}
+\newcommand\KEIGEI{\shortstack{\nGEI\\[-2pt]\nKEII}}
+\newcommand\Kaki{\shortstack{\nKa\\[-2pt]\nKii}}
+\newcommand\KAKI{\shortstack{\nKII\\[-2pt]\nKA}}
+\newcommand\Suizo{\shortstack{\nSui\\[-2pt]\nZo}}
+\newcommand\SUIZO{\shortstack{\nZO\\[-2pt]\nSUI}}
+\newcommand\Moko{\shortstack{\nMoii\\[-2pt]\nKoii}}
+\newcommand\MOKO{\shortstack{\nKOII\\[-2pt]\nMOII}}
+\newcommand\Hoo{\shortstack{\nHo\\[-2pt]\nOoii}}
+\newcommand\HOO{\shortstack{\nOOII\\[-2pt]\nHO}}
+\newcommand\Kirin{\shortstack{\nKi\\[-2pt]\nRin}}
+\newcommand\KIRIN{\shortstack{\nRIN\\[-2pt]\nKI}}
+\newcommand\Suisho{\shortstack{\nSuiii\\[-2pt]\nSho}}
+\newcommand\SUISHO{\shortstack{\nSHO\\[-2pt]\nSUIII}}
+\newcommand\Shiteno{\shortstack{\nShiii\\[-2pt]\nTen\\[-2pt]\nOo}}
+\newcommand\SHITENO{\shortstack{\nOO\\[-2pt]\nTEN\\[-2pt]\nSHIII}}
+\newcommand\Suigyu{\shortstack{\nSuii\\[-2pt]\nGyu}}
+\newcommand\SUIGYU{\shortstack{\nGYU\\[-2pt]\nSUII}}
+\newcommand\Hakku{\shortstack{\nHaku\\[-2pt]\nKu}}
+\newcommand\HAKKU{\shortstack{\nKU\\[-2pt]\nHAKU}}
+\newcommand\Honcho{\shortstack{\nHon\\[-2pt]\nCho}}
+\newcommand\HONCHO{\shortstack{\nCHO\\[-2pt]\nHON}}
+\newcommand\Ryuo{\shortstack{\nRyu\\[-2pt]\nOo}}
+\newcommand\RYUO{\shortstack{\nOO\\[-2pt]\nRYU}}
+\newcommand\Ryume{\shortstack{\nRyu\\[-2pt]\nMa}}
+\newcommand\RYUME{\shortstack{\nMA\\[-2pt]\nRYU}}
+\newcommand\Keima{\shortstack{\nKei\\[-2pt]\nMa}}
+\newcommand\KEIMA{\shortstack{\nMA\\[-2pt]\nKEI}}
+\newcommand\Mohyo{\shortstack{\nMo\\[-2pt]\nHyo}}
+\newcommand\MOHYO{\shortstack{\nHYO\\[-2pt]\nMO}}
+\newcommand\Narikyo{\shortstack{\nari\\[-2pt]\nKyo}}
+\newcommand\NARIKYO{\shortstack{\nKYO\\[-2pt]\nARI}}
+\newcommand\Narikei{\shortstack{\nari\\[-2pt]\nKei}}
+\newcommand\NARIKEI{\shortstack{\nKEI\\[-2pt]\nARI}}
+\newcommand\Narigin{\shortstack{\nari\\[-2pt]\nGin}}
+\newcommand\NARIGIN{\shortstack{\nGIN\\[-2pt]\nARI}}
+\newcommand\Hiroku{\shortstack{\nHi\\[-2pt]\nRoku}}
+\newcommand\HIROKU{\shortstack{\nROKU\\[-2pt]\nHI}}
+\newcommand\Hansha{\shortstack{\nHan\\[-2pt]\nSha}}
+\newcommand\HANSHA{\shortstack{\nSHA\\[-2pt]\nHAN}}
+\newcommand\Kyosha{\shortstack{\nKyo\\[-2pt]\nSha}}
+\newcommand\KYOSHA{\shortstack{\nSHA\\[-2pt]\nKYO}}
+\newcommand\Ogyo{\shortstack{\nKo\\[-2pt]\nGyo}}
+\newcommand\OGYO{\shortstack{\nGYO\\[-2pt]\nKO}}
+\newcommand\Fugyo{\shortstack{\nFu\\[-2pt]\nHei}}
+\newcommand\FUGYO{\shortstack{\nHEI\\[-2pt]\nFU}}
+\newcommand\Kohei{\shortstack{\nKo\\[-2pt]\nHei}}
+\newcommand\KOHEI{\shortstack{\nHEI\\[-2pt]\nKO}}
+\newcommand\Hono{\shortstack{\nHon\\[-2pt]\nOo}}
+\newcommand\HONO{\shortstack{\nOO\\[-2pt]\nHON}}
+\newcommand\Honju{\shortstack{\nHon\\[-2pt]\nJu}}
+\newcommand\HONJU{\shortstack{\nJU\\[-2pt]\nHON}}
+\newcommand\Kakusho{\shortstack{\nKaku\\[-2pt]\nSho}}
+\newcommand\KAKUSHO{\shortstack{\nSHO\\[-2pt]\nKAKU}}
+\newcommand\Kakugyo{\shortstack{\nKaku\\[-2pt]\nGyo}}
+\newcommand\KAKUGYO{\shortstack{\nGYO\\[-2pt]\nKAKU}}
+\newcommand\Kakuo{\shortstack{\nKaku\\[-2pt]\nKuo}}
+\newcommand\KAKUO{\shortstack{\nKUO\\[-2pt]\nKAKU}}
+\newcommand\Hisha{\shortstack{\nHi\\[-2pt]\nSha}}
+\newcommand\HISHA{\shortstack{\nSHA\\[-2pt]\nHI}}
+\newcommand\Higyu{\shortstack{\nHi\\[-2pt]\nGyu}}
+\newcommand\HIGYU{\shortstack{\nGYU\\[-2pt]\nHI}}
+\newcommand\Hisho{\shortstack{\nHi\\[-2pt]\nSho}}
+\newcommand\HISHO{\shortstack{\nSHO\\[-2pt]\nHI}}
+\newcommand\Hiju{\shortstack{\nHi\\[-2pt]\nJu}}
+\newcommand\HIJU{\shortstack{\nJU\\[-2pt]\nHI}}
+\newcommand\Taisho{\shortstack{\nTai\\[-2pt]\nSho}}
+\newcommand\TAISHO{\shortstack{\nSHO\\[-2pt]\nTAI}}
+\newcommand\Tessho{\shortstack{\nTesu\\[-2pt]\nSho}}
+\newcommand\TESSHO{\shortstack{\nSHO\\[-2pt]\nTESU}}
+\newcommand\Dosho{\shortstack{\nDo\\[-2pt]\nSho}}
+\newcommand\DOSHO{\shortstack{\nSHO\\[-2pt]\nDO}}
+\newcommand\Ginsho{\shortstack{\nGin\\[-2pt]\nSho}}
+\newcommand\GINSHO{\shortstack{\nSHO\\[-2pt]\nGIN}}
+\newcommand\Kinsho{\shortstack{\nKin\\[-2pt]\nSho}}
+\newcommand\KINSHO{\shortstack{\nSHO\\[-2pt]\nKIN}}
+\newcommand\Oosho{\shortstack{\nOo\\[-2pt]\nSho}}
+\newcommand\OOSHO{\shortstack{\nSHO\\[-2pt]\nOO}}
+\newcommand\Gyokusho{\shortstack{\nGyoku\\[-2pt]\nSho}}
+\newcommand\GYOKUSHO{\shortstack{\nSHO\\[-2pt]\nGYOKU}}
+\newcommand\Taishi{\shortstack{\nTaii\\[-2pt]\nShii}}
+\newcommand\TAISHI{\shortstack{\nSHII\\[-2pt]\nTAII}}
+\newcommand\Shishi{\shortstack{\nShi\\[-2pt]\nShii}}
+\newcommand\SHISHI{\shortstack{\nSHII\\[-2pt]\nSHI}}
+\newcommand\Shiyo{\shortstack{\nShi\\[-2pt]\nKuo}}
+\newcommand\SHIYO{\shortstack{\nKUO\\[-2pt]\nSHI}}
+\newcommand\Kenhei{\shortstack{\nKen\\[-2pt]\nHei}}
+\newcommand\KENHEI{\shortstack{\nHEI\\[-2pt]\nKEN}}
+\newcommand\Kengyo{\shortstack{\nKen\\[-2pt]\nGyo}}
+\newcommand\KENGYO{\shortstack{\nGYO\\[-2pt]\nKEN}}
+\newcommand\Fukusho{\shortstack{\nFuku\\[-2pt]\nSho}}
+\newcommand\FUKUSHO{\shortstack{\nSHO\\[-2pt]\nFUKU}}
+\newcommand\Chunin{\shortstack{\nChu\\[-2pt]\nNin}}
+\newcommand\CHUNIN{\shortstack{\nNIN\\[-2pt]\nCHU}}
+\newcommand\bHand{\char224}
+\newcommand\wHand{\char225}
+
+\newcommand\shodiag[1]{%
+\tenjikufalse\chufalse\shotrue
+\let\piece\shopiece
+\unitlength=.005truecm
+\begin{picture}(1100,1000)\small
+%draw the board first
+\linethickness{.1mm}
+\put(150,0){\grid(767,900)(85,100)}
+\linethickness{.2mm}%
+\put(150,0){\line(0,1){900}}
+\put(150,0){\line(1,0){765}}
+\put(915,0){\line(0,1){900}}
+\put(150,900){\line(1,0){765}}
+\multiputlist(190,950)(85,0){9,8,7,6,5,4,3,2,1}
+\multiputlist(970,50)(0,100){i,h,g,f,e,d,c,b,a}
+%
+#1
+\end{picture}}
+
+\newcommand\chudiag[1]{%
+\tenjikufalse\chutrue\shofalse
+\let\piece\chupiece
+\unitlength=.005truecm
+\begin{picture}(1200,1300)\small
+%draw the board first
+\linethickness{.1mm}
+\put(0,0){\grid(1025,1200)(85,100)}
+\linethickness{.2mm}%
+\put(0,0){\line(0,1){1200}}
+\put(0,0){\line(1,0){1025}}
+\put(1023,0){\line(0,1){1200}}
+\put(0,1200){\line(1,0){1025}}
+\multiputlist(50,1250)(85,0){12,11,10,9,8,7,6,5,4,3,2,1}
+\multiputlist(1080,50)(0,100){l,k,j,i,h,g,f,e,d,c,b,a}
+%
+#1
+\end{picture}}
+
+\newcommand\tenjikudiag[1]{%
+\tenjikutrue\chufalse\shofalse
+\let\piece\tenjikupiece
+\unitlength=.005truecm
+\begin{picture}(1600,1700)\small
+%draw the board first
+\linethickness{.1mm}
+\put(0,0){\grid(1360,1600)(85,100)}
+\linethickness{.2mm}%
+\put(0,0){\line(0,1){1600}}
+\put(0,0){\line(1,0){1360}}
+\put(1360,0){\line(0,1){1600}}
+\put(0,1600){\line(1,0){1360}}
+\multiputlist(40,1650)(85,0){16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1}
+\multiputlist(1400,50)(0,100){p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a}
+%
+#1
+\end{picture}}
+%
+\newcount\shogix %
+\newcount\shogiy %
+\newcount\xboard
+\newcount\yboard
+%
+\unitlength=.005truecm
+
+% 
+\newcommand\shopiece[3]{%
+  \xboard=930
+  \yboard=920
+  \shogix=#1
+  \shogiy=#2
+  \loop
+  \advance\shogix by -1
+  \advance\xboard by -85
+  \ifnum\shogix>0
+  \repeat
+  %
+  \loop
+  \advance\shogiy by -1
+  \advance\yboard by -100
+  \ifnum\shogiy>0
+  \repeat
+  %
+  %\advance\xboard by -75
+  %\advance\yboard by -90
+  \put(\xboard,\yboard){#3}%
+}
+
+
+\newcommand\chupiece[3]{%
+  \xboard=1040
+  \yboard=1220
+  \shogix=#1
+  \shogiy=#2
+  \loop
+  \advance\shogix by -1
+  \advance\xboard by -85
+  \ifnum\shogix>0
+  \repeat
+  %
+  \loop
+  \advance\shogiy by -1
+  \advance\yboard by -100
+  \ifnum\shogiy>0
+  \repeat
+  \put(\xboard,\yboard){#3}%
+}
+
+\newcommand\tenjikupiece[3]{%
+  \xboard=1387
+  \yboard=1620
+  \shogix=#1
+  \shogiy=#2
+  \loop
+  \advance\shogix by -1
+  \advance\xboard by -85
+  \ifnum\shogix>0
+  \repeat
+  %
+  \loop
+  \advance\shogiy by -1
+  \advance\yboard by -100
+  \ifnum\shogiy>0
+  \repeat
+  \put(\xboard,\yboard){#3}%
+}
+
+
+\newcommand\shogirow[2]{%
+  \shogiy=#1
+  \iftenjiku
+  \xboard=40
+  \yboard=1640
+  \else\ifchu
+  \xboard=40
+  \yboard=1250
+  \else\ifsho
+  \xboard=190
+  \yboard=950
+  \fi\fi\fi
+  \loop
+  \advance\shogiy by -1
+  \advance\yboard by -100
+  \ifnum\shogiy>0
+  \repeat
+  \multiputlist(\xboard,\yboard)(85,0){#2}%
+}
+
+%\newcommand\shogipiece[1]{%
+%  \if#1K\Gyoku\else
+%  \if#1k\OO\else
+%  \if#1R\Hi\else
+%  \if#1r\HI\else
+%  \if#1B\Kaku\else
+%  \if#1b\KAKU\else
+%  \if#1P\Fu\else
+%  \if#1p\FU\else
+%  \if#1L\Kyo\else
+%  \if#1l\KYO\else
+%  \if#1G\Kin\else
+%  \if#1g\KIN\else
+%  \if#1S\Gin\else
+%  \if#1s\GIN\else
+%  \ifx#1pS\Narigin\else % does not work :-(
+%  \ifx#1ps\NARIGIN\else
+%  \if#1N\Kei\else
+%  \if#1n\KEI\else
+%  % all sho pieces ...
+%  \relax
+%  \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+%}
+
+
+
+\def\endlist{\endlist}
+\def\whitehand#1{%
+  \xboard=70
+  \yboard=320
+  \put(\xboard,\yboard){{\shogi\wHand}}%
+  \processwhitehand#1\endlist
+}
+\def\blackhand#1{%
+  \xboard=1030
+  \yboard=520
+  \put(\xboard,\yboard){{\shogi\bHand}}%
+  \processblackhand#1\endlist
+}
+
+
+\def\processblackhand{\afterassignment\processblackpiece\let\next=}
+\def\processwhitehand{\afterassignment\processwhitepiece\let\next=}
+
+\def\processblackpiece{%
+  \ifx\next\endlist\let\next\relax
+  \else
+  \if\next G\global\advance\yboard by -100 \put(\xboard,\yboard){\Kin}\else
+    \if\next S\global\advance\yboard by -100 \put(\xboard,\yboard){\Gin}\else
+      \if\next N\global\advance\yboard by -100 \put(\xboard,\yboard){\Kei}\else
+        \if\next L\global\advance\yboard by -100 \put(\xboard,\yboard){\Kyo}\else
+          \if\next P\global\advance\yboard by -100 \put(\xboard,\yboard){\Fu}\else
+            \if\next R\global\advance\yboard by -100 \put(\xboard,\yboard){\Hi}\else
+              \if\next B\global\advance\yboard by -100 \put(\xboard,\yboard){\Kaku}\else                
+                \put(1080,\yboard){\small\next}%
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \let\next\processblackhand
+                \fi\next}
+
+\def\processwhitepiece{%
+  \ifx\next\endlist\let\next\relax
+  \else
+  \if\next G\global\advance\yboard by 100 \put(\xboard,\yboard){\KIN}\else
+    \if\next S\global\advance\yboard by 100 \put(\xboard,\yboard){\GIN}\else
+      \if\next N\global\advance\yboard by 100 \put(\xboard,\yboard){\KEI}\else
+        \if\next L\global\advance\yboard by 100 \put(\xboard,\yboard){\KYO}\else
+          \if\next P\global\advance\yboard by 100 \put(\xboard,\yboard){\FU}\else
+            \if\next R\global\advance\yboard by 100 \put(\xboard,\yboard){\HI}\else
+              \if\next B\global\advance\yboard by 100 \put(\xboard,\yboard){\KAKU}\else                
+                \put(10,\yboard){\small\next}%
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \fi
+                \let\next\processwhitehand
+                \fi\next}
+
+\let\piece\shopiece

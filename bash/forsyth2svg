@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fbname=`basename "$1" .fsy`
+
+./forsyth2tex.pl -fl $1 > "$fbname".tex
+
+latex "$fbname"
+dvisvgm -n --scale=4 "$fbname"
