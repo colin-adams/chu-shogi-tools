@@ -13,6 +13,7 @@ You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedor
 - sudo yum install texlive-dvisvgm-bin
 - sudo yum install texlive-texconfig-bin
 - sudo yum install texlive-metafont-bin
+- sudo yum install texlive-mfware-bin
 - sudo yum install 'tex(cmr10.tfm)'
 - sudo yum install 'tex(colordvi.sty)'
 - sudo yum install 'tex(epic.sty)'
