@@ -18,6 +18,8 @@ You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedor
 - sudo yum install 'tex(colordvi.sty)'
 - sudo yum install 'tex(epic.sty)'
 
+For the tools written in Eiffel, you should also install EiffelStudio from Eiffel Software.
+
 Installation
 ============
 
@@ -27,10 +29,35 @@ mkdir ~/chu-tools
 
 2) Copy all files from the sub-directories (bash, example, latex, perl) to the installation directory.
 
-3) Change to the installation directory and type the command:
+3) Change to the eiffel directory: cd eiffel
+
+4) cd fen2fsy
+
+5) ec -config fen2fsy.ecf
+
+6) cd EIFGENs/fen2fsy/F_code
+
+7) finish_freezing
+
+8) cp fen2fsy ~/chu-tools
+
+9) cd ../../..
+
+10) rm -rf EIFGENs
+
+11) cp fen2fsy start.fen ~/chu-tools
+
+12) Change to the installation directory (cd ~/chu-tools) and type the command:
 
 ./forsyth2svg stampede.fsy
 
 This should create a file stampede.svg - one of my mating problems.
+
+13) Type the commands:
+
+./fen2fsy start.fen start.fsy
+./forsyth2png start.fsy
+
+This should create a file start1.png - the start position obtained by doing File -> Save Position from the xboard menu
 
 
