@@ -21,9 +21,9 @@ feature {NONE} -- Initialization
 				forsyth := ""
 			end
 			if a_code.is_lower then
-				forsyth := converted_code (a_code.as_upper)
+				forsyth := forsyth + converted_code (a_code.as_upper)
 			else
-				forsyth := converted_code (a_code.as_upper).as_lower
+				forsyth := forsyth + converted_code (a_code.as_upper).as_lower
 			end
 		end
 
