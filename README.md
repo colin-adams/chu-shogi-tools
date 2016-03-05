@@ -31,7 +31,9 @@ mkdir ~/chu-tools
 
 4) cd fen2fsy
 
-5) ec -config fen2fsy.ecf
+5) ec -finalize -config fen2fsy.ecf
+
+If promoted to compile pre-compiled libraries, reply y
 
 6) cd EIFGENs/fen2fsy/F_code
 
@@ -43,19 +45,22 @@ mkdir ~/chu-tools
 
 10) rm -rf EIFGENs
 
-11) cp fen2fsy start.fen ~/chu-tools
+11) cp start.fen ~/chu-tools
 
 12) Change to the installation directory (cd ~/chu-tools) and type the command:
 
 ./forsyth2svg stampede.fsy
 
-This should create a file stampede.svg - one of my mating problems.
+This should create a file stampede.svg[*] - one of my mating problems.
 
 13) Type the commands:
 
 ./fen2fsy start.fen start.fsy
+
 ./forsyth2png start.fsy
 
 This should create a file start1.png - the start position obtained by doing File -> Save Position from the xboard menu
+
+[*] This is hanging at 100% CPU busy. Bummer
 
 
