@@ -6,7 +6,7 @@ Tools for rendering Chu Shogi diagrams (and other Shogi variants), and other use
 Prerequisites
 =============
 
-You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedora 23 that means doing:
+You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedora 27 that means doing:
 
 - sudo dnf install texlive-latex-bin
 - sudo dnf install texlive-dvipng-bin
@@ -15,6 +15,7 @@ You need to install the programs bash, perl, latex, dvipng and dvisvgm. On Fedor
 - sudo dnf install 'tex(cmr10.tfm)'
 - sudo dnf install 'tex(colordvi.sty)'
 - sudo dnf install 'tex(epic.sty)'
+- sudo dnf install texlive-hyphen-base
 
 For the tools written in Eiffel, you should also install EiffelStudio from Eiffel Software.
 
